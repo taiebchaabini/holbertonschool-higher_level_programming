@@ -18,7 +18,7 @@ int check_cycle(listint_t *list)
 			tmp = list;
 		if (tmp->n == list->n && i != 0)
 			return (1);
-		if (i == 0 && list->n == 0)
+		if (i == 0 && ! list->n)
 			return (0);
 		list = list->next;
 		i++;
