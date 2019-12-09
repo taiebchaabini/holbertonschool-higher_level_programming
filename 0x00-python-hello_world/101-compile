@@ -1,2 +1,2 @@
 #!/bin/bash
-python -m py_compile $PYFILE $PYFILEc 
+python -m py_compile $PYFILE $PYFILE'c' 
