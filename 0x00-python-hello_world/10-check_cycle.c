@@ -15,16 +15,9 @@ int check_cycle(listint_t *list)
 	while (list)
 	{
 		if (i == 0)
-		{
-			tmp = malloc(sizeof(list) * list->n);
-			tmp->n = list->n;
-			tmp->next = NULL;
-		}
+			tmp = list;
 		if (tmp->n == list->n && i != 0)
-		{
-			free(tmp);
 			return (1);
-		}
 		list = list->next;
 		i++;
 	}
