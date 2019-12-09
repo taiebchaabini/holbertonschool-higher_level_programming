@@ -1,22 +1,30 @@
 #include "lists.h"
 #include <stdio.h>
 /**
-* check_cycle - Function that checks if a singly linked list has a cycle in it.
-* @list: Take a listint_t as argument
-* Return: 1 if have a cycle otherwise 0
-**/
+ * check_cycle - Function that checks if a singly linked list has a cycle in it.
+ * @list: Take a listint_t as argument
+ * Return: 1 if have a cycle otherwise 0
+ **/
 int check_cycle(listint_t *list)
 {
-	int i = 0, tmp = -1;
+	int i = 0;
+	struct listint_s *tmp = NULL;
 
 	if (list == NULL)
 		return (0);
 	while (list)
 	{
-		if (tmp == list->n)
-			return (1);
 		if (i == 0)
-			tmp = list->n;
+		{
+			tmp = malloc(sizeof(list) * list->n);
+			tmp->n = list->n;
+			tmp->next = NULL;
+		}
+		if (tmp->n == list->n && i != 0)
+		{
+			free(tmp);
+			return (1);
+		}
 		list = list->next;
 		i++;
 	}
