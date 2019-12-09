@@ -8,9 +8,10 @@
 int check_cycle(listint_t *list)
 {
 	int i = 0, tmp = -1;
+
 	if (list == NULL)
 		return (0);
-	while(list)
+	while (list)
 	{
 		if (tmp == list->n)
 			return (1);
