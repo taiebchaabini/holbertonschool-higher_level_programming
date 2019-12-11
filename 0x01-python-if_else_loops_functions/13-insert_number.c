@@ -43,6 +43,11 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 	new->n = number;
 	new->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
 	while (count)
 	{
 		if (count->n > number)
@@ -52,7 +57,7 @@ listint_t *insert_node(listint_t **head, int number)
 		count = count->next;
 	}
 	pos = findPos(highval, lowval);
-	while (current)
+	for (i = 0; current; i++, current = current->next)
 	{
 		if (pos == 0 && i == 0)
 		{
@@ -64,8 +69,6 @@ listint_t *insert_node(listint_t **head, int number)
 			new->next = current->next;
 			current->next = new;
 		}
-		i++;
-		current = current->next;
 	}
 	if (pos == i)
 	{
@@ -74,5 +77,5 @@ listint_t *insert_node(listint_t **head, int number)
 			current = current->next;
 		current->next = new;
 	}
-	return (current);
+	return (new);
 }
