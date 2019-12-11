@@ -28,7 +28,7 @@ int check_cycle(listint_t *list)
 	{
 		if (checkn == tmp->n)
 			b++;
-		if (b == 0)
+		if (b == 2)
 			return (1);
 		if (i > 100)
 			return (0);
