@@ -4,18 +4,26 @@
  * @hval: Highest value of head->n
  * @lowval: Lowest value of head->n
  * Return: return the current position
- **/
+**/
 int findPos(int hval, int lowval)
 {
 	int max = 0, low = 0, pos = 0;
 
+	if (lowval == 0 && hval == 0)
+		return (0);
 	while (max < hval || max < lowval)
 		max++;
-
 	low = hval > lowval ? lowval : hval;
 	max = hval < lowval ? lowval : hval;
-	while (pos <= low && pos < max)
+	while (pos < low && pos < max)
 		pos++;
+	if (pos < lowval)
+	{
+		while (pos < lowval)
+			pos++;
+	}
+	if (lowval > hval && pos == lowval)
+		pos--;
 	return (pos);
 }
 /**
@@ -27,15 +35,12 @@ int findPos(int hval, int lowval)
 **/
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *count, *current, *new;
+	listint_t *count = *head, *current = *head, *new;
 	int lowval = 0, highval = 0, i = 0, pos = 0;
 
-	count = *head;
-	current = *head;
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
-
 	new->n = number;
 	new->next = NULL;
 	while (count)
@@ -49,13 +54,25 @@ listint_t *insert_node(listint_t **head, int number)
 	pos = findPos(highval, lowval);
 	while (current)
 	{
-		if (i == pos)
+		if (pos == 0 && i == 0)
+		{
+			new->next = *head;
+			*head = new;
+		}
+		if (i == pos && pos != 0)
 		{
 			new->next = current->next;
 			current->next = new;
 		}
 		i++;
 		current = current->next;
+	}
+	if (pos == i)
+	{
+		current = *head;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new;
 	}
 	return (current);
 }
