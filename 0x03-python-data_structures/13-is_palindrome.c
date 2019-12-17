@@ -30,13 +30,13 @@ int is_palindrome(listint_t **head)
 	size_t len;
 	unsigned int i = 0;
 	listint_t *tmp;
-	int list[1024];
-
-	if (!head || !*head)
-		return (1);
+	int *list;
 
 	tmp = *head;
 	len = listint_len(tmp);
+	list = malloc(sizeof(int) * len);
+	if (list == NULL)
+		exit(-1);
 	if (len == 0)
 		return (1);
 	while (tmp)
@@ -50,5 +50,6 @@ int is_palindrome(listint_t **head)
 		if (list[i] != list[len - i - 1])
 			return (0);
 	}
+	free(list);
 	return (1);
 }
