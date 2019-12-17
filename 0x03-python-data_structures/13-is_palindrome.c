@@ -29,25 +29,23 @@ int is_palindrome(listint_t **head)
 {
 	size_t len;
 	unsigned int i = 0;
-	unsigned int j = 0;
 	listint_t *tmp;
-	listint_t *tmp2;
+	int list[2048];
 
-	if (!head || !*head)
-		return (1);
 	tmp = *head;
 	len = listint_len(tmp);
 	if (len == 0)
 		return (1);
-	while (i < len / 2)
+	while (tmp)
 	{
-		tmp2 = tmp;
-		for (j = i; j < len - i - 1; j++)
-			tmp2 = tmp2->next;
-		if (tmp->n != tmp2->n)
-			return (0);
-		i++;
+		list[i] = tmp->n;
 		tmp = tmp->next;
+		i++;
+	}
+	for (i = 0; i < len; i++)
+	{
+		if (list[i] != list[len - i - 1])
+			return (0);
 	}
 	return (1);
 }
