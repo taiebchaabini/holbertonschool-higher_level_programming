@@ -30,7 +30,7 @@ int is_palindrome(listint_t **head)
 	size_t len;
 	unsigned int i = 0;
 	listint_t *tmp;
-	int list[20];
+	int list[1024];
 
 	if (!head || !*head)
 		return (1);
