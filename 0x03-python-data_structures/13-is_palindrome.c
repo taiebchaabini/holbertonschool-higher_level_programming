@@ -39,13 +39,11 @@ int is_palindrome(listint_t **head)
 	len = listint_len(tmp);
 	if (len == 0)
 		return (1);
-	while (tmp)
+	while (i < len / 2)
 	{
 		tmp2 = tmp;
 		for (j = i; j < len - i - 1; j++)
-		{
 			tmp2 = tmp2->next;
-		}
 		if (tmp->n != tmp2->n)
 			return (0);
 		i++;
