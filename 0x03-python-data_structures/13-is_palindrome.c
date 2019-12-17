@@ -33,6 +33,8 @@ int is_palindrome(listint_t **head)
 	listint_t *tmp;
 	listint_t *tmp2;
 
+	if (!head || !*head)
+		return (1);
 	tmp = *head;
 	len = listint_len(tmp);
 	if (len == 0)
