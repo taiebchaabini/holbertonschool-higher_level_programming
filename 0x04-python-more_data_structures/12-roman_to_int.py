@@ -8,9 +8,9 @@ def roman_to_int(roman_string):
     res = 0
     for i in range(len(roman_string)):
         v = roman_string[i]
-        if (i > 0 and my_dict[roman_string[i - 1]] < my_dict[v]):
-            u = my_dict[roman_string[i - 1]]
-            res -= u
+        if (len(roman_string) != i + 1 and my_dict[roman_string[i + 1]] >
+           my_dict[v]):
+            u = my_dict[v]
         res += my_dict[v]
         res -= u
     return (res)
