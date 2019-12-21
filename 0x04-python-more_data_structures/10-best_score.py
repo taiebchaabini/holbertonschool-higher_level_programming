@@ -6,6 +6,7 @@ def best_score(a_dictionary):
     res = ""
     for i in a_dictionary:
         v = a_dictionary[i]
+        v = (v, -v)[v < 0]
         if (v > key):
             key = v
             res = i
