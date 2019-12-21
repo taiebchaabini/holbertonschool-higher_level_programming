@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     for i in range(len(roman_string)):
         v = roman_string[i]
         res += my_dict[v]
-        if (i == 1 and roman_string[0] is "I"):
+        if (i == 1 and roman_string[0] is "I" and strlen(roman_string) == 2):
             res = my_dict[v] - i
             print(roman_string[0])
     return (res)
