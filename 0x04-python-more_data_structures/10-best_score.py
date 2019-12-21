@@ -2,10 +2,11 @@
 def best_score(a_dictionary):
     if (a_dictionary is None):
         return None
-    key = list(a_dictionary.values())[0]
+    key = -999999999999999999999
     res = ""
-    for i, v in a_dictionary.items():
-        if (v >= key):
+    for i in a_dictionary:
+        v = a_dictionary[i]
+        if (v > key):
             key = v
             res = i
     return res
