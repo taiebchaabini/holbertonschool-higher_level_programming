@@ -41,6 +41,6 @@ class Square:
             if (position[1] > 0):
                 print("")
             for i in range(size):
-                for i in range(0, max(position)):
+                for i in range(min(position), max(position)):
                     print(" ", end="")
                 print("#" * size)
