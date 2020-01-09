@@ -27,8 +27,7 @@ class Square:
             all(isinstance(n, int) for n in value) is False or
             len(value) != 2 or
            all((n < 0) for n in value) is True):
-                errorMsg = "position must be a tuple of 2 positive integers"
-                raise TypeError(errorMsg)
+                raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
