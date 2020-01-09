@@ -38,6 +38,8 @@ class Square:
         if (size == 0):
             print("")
         else:
+            if (position[1] > 0):
+                print("")
             for i in range(size):
                 if position[0] == position[1]:
                     print(" " * position[0], end="")
@@ -45,5 +47,3 @@ class Square:
                     for i in range(position[1], position[0]):
                         print(" ", end="")
                 print("#" * size)
-            if position[1] <= 0 and position[0] <= 0:
-                print("")
