@@ -38,9 +38,9 @@ class Square:
         if (size == 0):
             print("")
         else:
-            if (position[1] > 0):
+            if position[1] > 0:
                 print("")
             for i in range(size):
-                for i in range(min(position), max(position)):
-                    print(" ", end="")
+                if position[1] <= 0 or position[0] > 0:
+                    print(" " * position[0], end="")
                 print("#" * size)
