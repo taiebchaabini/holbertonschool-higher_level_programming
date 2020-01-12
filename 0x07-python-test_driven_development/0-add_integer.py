@@ -7,8 +7,8 @@ The example module supplies one function, add_integer().  For example,
 
 
 def add_integer(a, b=98):
-    """ >>> add_integer(1, 2):
-    3
+    """
+    Return the sum of a and b
     """
     types = (int, float)
     l = (isinstance(a, types), isinstance(b, types))
