@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ This is the "0-add_integer" module.
 The example module supplies one function, add_integer().  For example,
->>> add_integer(1,2):
+>>> add_integer(1,2)
 3
 """
 
@@ -20,4 +20,4 @@ def add_integer(a, b=98):
 
 if __name__ == "__main__":
     import doctest
-    doctest.testfile("0-add_integer.txt")
+    doctest.testfile("tests/0-add_integer.txt")
