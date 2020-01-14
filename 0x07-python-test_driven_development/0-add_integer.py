@@ -16,6 +16,11 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if (l[1] is False):
         raise TypeError("b must be an integer")
+    res = a + b
+    if res < 0:
+        res = -res
+    if res == float("inf"):
+        raise ValueError("float overflow")
     return (int(a) + int(b))
 
 if __name__ == "__main__":
