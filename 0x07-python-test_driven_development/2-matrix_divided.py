@@ -4,6 +4,10 @@ def matrix_divided(matrix, div):
     errorMsg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list:
         raise TypeError(errorMsg)
+    if len(matrix) == 1:
+        if len(matrix[0]) == 1 and isinstance(matrix[0][0], types) is True:
+            return [[matrix[0][0]/3]]
+            
     if len(matrix) <= 1:
         raise TypeError(errorMsg)
     for i in matrix:
