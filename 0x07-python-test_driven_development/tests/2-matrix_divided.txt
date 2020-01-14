@@ -9,7 +9,9 @@ Importing function from the file
 
 
 >>> matrix_divided([[3]], 3)
-[[1.0]]
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix_divided([[],[]], 3)
 Traceback (most recent call last):
    ...
