@@ -8,9 +8,6 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
     if (isinstance(div, types) is False):
         raise TypeError("div must be a number")
-    if len(matrix) == 1:
-        if len(matrix[0]) == 1 and isinstance(matrix[0][0], types) is True:
-            return [[matrix[0][0]/3]]
     if len(matrix) <= 1:
         raise TypeError(errorMsg)
     for i in matrix:
