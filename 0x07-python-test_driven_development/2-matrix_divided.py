@@ -7,13 +7,13 @@ def matrix_divided(matrix, div):
     for i in matrix:
         if type(i) is not list:
             raise TypeError(errorMsg)
-    if len(matrix) <= 1:
+    if len(matrix) is 0:
         raise TypeError(errorMsg)
     if (isinstance(div, types) is False):
         raise TypeError("div must be a number")
     c = list(map(lambda x:
              list(map(lambda i: isinstance(i, types), x)), matrix))
-    if len(matrix) is 0:
+    if len(c) is 0:
         raise TypeError(errorMsg)
     for i in c:
         if False in i:
