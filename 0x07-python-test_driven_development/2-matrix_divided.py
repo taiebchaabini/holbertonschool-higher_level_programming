@@ -4,14 +4,12 @@ def matrix_divided(matrix, div):
     errorMsg = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list:
         raise TypeError(errorMsg)
-    if len(matrix) <= 1:
+    if len(matrix) < 1:
         raise TypeError(errorMsg)
     if (isinstance(div, types) is False):
         raise TypeError("div must be a number")
     c = list(map(lambda x:
              list(map(lambda i: isinstance(i, types), x)), matrix))
-    if len(matrix) is 0:
-        raise TypeError(errorMsg)
     for i in c:
         if False in i:
             raise TypeError(errorMsg)
