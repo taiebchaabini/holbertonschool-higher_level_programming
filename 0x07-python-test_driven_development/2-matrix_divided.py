@@ -11,7 +11,7 @@ def matrix_divided(matrix, div):
     c = list(map(lambda x:
              list(map(lambda i: isinstance(i, types), x)), matrix))
     for i in c:
-        if False in i:
+        if False in i or len(i) == 0:
             raise TypeError(errorMsg)
     matrixlen = list(map(lambda x: len(x), matrix))
     if (len(set(matrixlen)) != 1):
