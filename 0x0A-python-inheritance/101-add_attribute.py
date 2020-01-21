@@ -2,7 +2,7 @@
 
 
 def add_attribute(obj, name="name", value="default"):
-    types = (int, float, str, bool)
+    types = (set, tuple, dict, int, float, str, bool)
     if not isinstance(obj, types):
         obj.name = value
     else:
