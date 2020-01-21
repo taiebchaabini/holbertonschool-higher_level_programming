@@ -13,11 +13,11 @@ class MyInt(int):
             Reverse the initial __eq__ function
             if 1 == 1 return False
         """
-        return False
+        return super().__int__() != value
 
     def __ne__(self, value):
         """
             Reverse the initial __eq__ function
             if 1 != 1 return True
         """
-        return True
+        return super().__int__() == value
