@@ -1,3 +1,10 @@
+"""
+   Test case for the module 7-base_geometry
+"""
+
+"""
+   Importing function BaseGeometry from my module
+"""
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
