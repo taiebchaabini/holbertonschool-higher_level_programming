@@ -39,6 +39,7 @@ class Student:
             - dictionary value will be the value of the public attribute
         """
         new_dict = dict(json)
-        for i in new_dict:
-            self.i = new_dict[i]
-        self.__dict__ = new_dict
+        if len(new_dict) != 0 or type(json) is None:
+            for i in new_dict:
+                self.i = new_dict[i]
+            self.__dict__ = new_dict
