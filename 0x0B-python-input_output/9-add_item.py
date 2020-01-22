@@ -17,5 +17,7 @@ try:
         current_list.append(i)
 except FileNotFoundError:
     pass
+except Exception:
+    pass
 finally:
     save_to_json_file(current_list, filename)
