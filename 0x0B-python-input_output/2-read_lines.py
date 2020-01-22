@@ -10,7 +10,7 @@ def read_lines(filename="", nb_lines=0):
        and prints it to stdout:
     """
     i = 0
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding='utf-8') as f:
         f = list(f)
         nb_maxlines = len(f)
         if nb_lines <= 0 or nb_lines >= nb_maxlines:
