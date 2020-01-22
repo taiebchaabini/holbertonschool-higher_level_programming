@@ -10,14 +10,15 @@ load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
 filename = "add_item.json"
 current_list = []
 
-try:
-    current_list = load_from_json_file(filename)
-    args = sys.argv[1:]
-    for i in args:
-        current_list.append(i)
-except FileNotFoundError:
-    pass
-except Exception:
-    pass
-finally:
-    save_to_json_file(current_list, filename)
+if len(sys.argv) == 1:
+        save_to_json_file(current_list, filename)
+else:
+    try:
+        current_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        pass
+    finally:
+        args = sys.argv[1:]
+        for i in args:
+            current_list.append(i)
+        save_to_json_file(current_list, filename)
