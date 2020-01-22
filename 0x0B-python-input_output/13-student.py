@@ -5,7 +5,6 @@
    - last_name
    - age
 """
-from_json_string = __import__("6-from_json_string").from_json_string
 
 
 class Student:
