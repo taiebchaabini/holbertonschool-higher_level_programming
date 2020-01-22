@@ -40,6 +40,4 @@ class Student:
         """
         new_dict = dict(json)
         if len(new_dict) != 0 or type(json) is None:
-            for i in new_dict:
-                self.i = new_dict[i]
             self.__dict__ = new_dict
