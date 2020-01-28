@@ -114,3 +114,12 @@ class Rectangle(Base):
             return
         for i in kwargs:
             setattr(self, i,  kwargs[i])
+
+    def to_dictionary(self):
+        dicta = {}
+        dicta['id'] = self.id
+        dicta['width'] = self.width
+        dicta['height'] = self.height
+        dicta['x'] = self.x
+        dicta['y'] = self.y
+        return dicta
