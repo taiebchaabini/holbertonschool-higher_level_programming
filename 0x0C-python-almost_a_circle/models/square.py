@@ -11,11 +11,14 @@ class Square(Rectangle):
        super class with id, x, y, width and height
     """
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y, id)
+        self.width = size
+        self.height = size
+        super().__init__(self.width, self.height, x, y, id)
+
 
     def __str__(self):
         """
            Str output
         """
-        return "Square] ({:d}) {:d}/{:d} - {:d}".format(
-                self.id, self.x, self.y, self.height)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
+                self.id, self.x, self.y, self.width)
