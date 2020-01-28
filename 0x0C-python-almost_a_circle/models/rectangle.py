@@ -119,10 +119,11 @@ class Rectangle(Base):
         """
             returns the dictionary representation of a Rectangle
         """
-        dicta = {}
-        dicta['id'] = self.id
-        dicta['width'] = self.width
-        dicta['height'] = self.height
-        dicta['x'] = self.x
-        dicta['y'] = self.y
+        dicta = {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
         return dicta
