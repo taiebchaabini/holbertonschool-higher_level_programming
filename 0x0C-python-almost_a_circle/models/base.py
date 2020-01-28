@@ -43,3 +43,4 @@ class Base:
                 for i in list_objs:
                     l.append(i.to_dictionary())
                 f.write(Base.to_json_string(l))
+                f.write("")
