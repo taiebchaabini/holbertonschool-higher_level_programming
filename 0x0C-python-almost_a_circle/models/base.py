@@ -42,4 +42,6 @@ class Base:
             with open(filename, "w") as f:
                 for i in list_objs:
                     l.append(i.to_dictionary())
-                f.write(cls.to_json_string(l))
+                l = (cls.to_json_string(l))
+                f.write(l)
+            f.close()
