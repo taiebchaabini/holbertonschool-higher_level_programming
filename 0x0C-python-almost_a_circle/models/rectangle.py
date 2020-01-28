@@ -116,6 +116,9 @@ class Rectangle(Base):
             setattr(self, i,  kwargs[i])
 
     def to_dictionary(self):
+        """
+            returns the dictionary representation of a Rectangle
+        """
         dicta = {}
         dicta['id'] = self.id
         dicta['width'] = self.width
