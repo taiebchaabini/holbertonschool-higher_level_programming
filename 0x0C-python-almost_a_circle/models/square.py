@@ -52,3 +52,15 @@ class Square(Rectangle):
         if lena == 0:
             for i in kwargs:
                 setattr(self, i, kwargs[i])
+
+    def to_dictionary(self):
+        """
+           returns the dictionary representation of a Square
+        """
+        dicta = {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
+        return dicta
