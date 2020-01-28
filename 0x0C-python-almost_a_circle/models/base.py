@@ -64,7 +64,7 @@ class Base:
             instance = cls(1)
         instance.update(**dictionary)
         return instance
-    
+
     @classmethod
     def load_from_file(cls):
         """
@@ -78,6 +78,6 @@ class Base:
                 myobj = cls.from_json_string(content)
                 for i in myobj:
                     instance.append(cls.create(**i))
-            return instance 
+            return instance
         except:
             return []
