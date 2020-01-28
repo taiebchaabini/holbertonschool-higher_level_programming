@@ -16,6 +16,9 @@ class TestRectangleOutput(unittest.TestCase):
             self.assertEqual(r2.id, 2)
             r3 = Rectangle(10, 2, 0, 0, 12)
             self.assertEqual(r3.id, 12)
+            r4 = Rectangle(10, 2, 0, 0, 3)
+            self.assertEqual(r4.id, 3)
+
     def test_validate_types(self):
         """ [Rectangle] Types validators """
         with self.assertRaises(TypeError) as cm:
@@ -45,10 +48,10 @@ class TestRectangleOutput(unittest.TestCase):
         self.assertEqual(cm.exception.args[0], "height must be > 0")
         
         with self.assertRaises(ValueError) as cm:
-            r1 = Rectangle(1, 1, -2) 
-        self.assertEqual(cm.exception.args[0], "x must be > 0")
+            r1 = Rectangle(1, 1, -2, 0) 
+        self.assertEqual(cm.exception.args[0], "x must be >= 0")
         
         with self.assertRaises(ValueError) as cm:
             r1 = Rectangle(1, 1, 2, -2) 
-        self.assertEqual(cm.exception.args[0], "y must be > 0") 
+        self.assertEqual(cm.exception.args[0], "y must be >= 0") 
  
