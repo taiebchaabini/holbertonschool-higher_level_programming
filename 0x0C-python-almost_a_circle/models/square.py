@@ -17,5 +17,5 @@ class Square(Rectangle):
         """
            Str output
         """
-        return "Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
-                self.x, self.y, self.height)
+        return "Square] ({:d}) {:d}/{:d} - {:d}".format(
+                self.id, self.x, self.y, self.height)
