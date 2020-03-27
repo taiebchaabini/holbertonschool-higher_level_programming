@@ -9,8 +9,8 @@ dbname = argv[3]
 keyword = argv[4]
 db = MySQLdb.connect(host="localhost", user=user, passwd=pwd, db=dbname)
 cur = db.cursor()
-cur.execute("SELECT * FROM states WHERE name = %s;",(keyword,))
+cur.execute("SELECT * FROM states WHERE name = %s;", (keyword,))
 rows = cur.fetchall()
 for row in rows:
     print(row)
-db.close();
+db.close()
