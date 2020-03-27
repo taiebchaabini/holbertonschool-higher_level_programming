@@ -14,3 +14,4 @@ cur.execute(query)
 rows = cur.fetchall()
 for row in rows:
     print(row)
+db.close()
