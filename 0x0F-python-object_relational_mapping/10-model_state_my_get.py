@@ -17,9 +17,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    query = session.query(State).filter(State.name.like(keyword)).all()
+    query = session.query(State).filter(State.name.like(keyword)).first()
     if (query is None):
         print("Not found")
         exit()
-    for row in query:
-        print("{}".format(row.id))
+    print("{}".format(query.id))
