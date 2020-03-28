@@ -23,7 +23,6 @@ if __name__ == "__main__":
             print("{}".format(col), end="")
         if (row != rows[len(rows) - 1]):
             print(", ", end="")
-        else:
-            print("")
+    print("")
     cur.close()
     db.close()
