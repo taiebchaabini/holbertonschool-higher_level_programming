@@ -16,6 +16,6 @@ class State(Base):
     __tablename__ = "states"
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost\
-            /{}".format(user, pwd, dbname))
+    connector = "mysql+mysqldb://{}:{}@localhost/{}".format(user, pwd, dbname)
+    engine = create_engine(connector)
     Base.metadata.create_all(engine)
