@@ -7,11 +7,11 @@ if __name__ == "__main__":
     user = argv[1]
     pwd = argv[2]
     dbname = argv[3]
-    keyword = argv[4]
-    query = "SELECT * FROM states WHERE name='"+keyword+"' ORDER BY id"
+    keyword = str(argv[4])
+    query = """SELECT * FROM states WHERE name = %s ORDER BY id"""
     db = MySQLdb.connect(host="localhost", user=user, passwd=pwd, db=dbname)
     cur = db.cursor()
-    cur.execute(query)
+    cur.execute(query, (keyword,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
