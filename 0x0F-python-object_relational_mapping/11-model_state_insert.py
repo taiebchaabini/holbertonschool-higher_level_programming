@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script that prints the first State object from the database hbtn_0e_6_usa
+""" script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
 """
 if __name__ == "__main__":
     from sys import argv
