@@ -10,7 +10,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=user, passwd=pwd, db=dbname)
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states WHERE SUBSTRING(name, 1)\
-            REGEXP BINARY '[N]' ORDER BY id")
+            REGEXP BINARY '^[N]' ORDER BY id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
