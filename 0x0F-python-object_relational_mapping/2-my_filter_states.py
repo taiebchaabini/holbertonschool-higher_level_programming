@@ -8,10 +8,10 @@ if __name__ == "__main__":
     pwd = argv[2]
     dbname = argv[3]
     keyword = str(argv[4])
-    query = "SELECT id, name FROM states WHERE name LIKE '{}' ORDER BY id ASC"
     db = MySQLdb.connect(host="localhost", user=user, passwd=pwd, db=dbname)
     cur = db.cursor()
-    cur.execute(query.format(keyword))
+    cur.execute("SELECT id, name FROM states WHERE name LIKE '{:s}' ORDER BY \
+            id ASC".format(keyword))
     rows = cur.fetchall()
     for row in rows:
         print(row)
