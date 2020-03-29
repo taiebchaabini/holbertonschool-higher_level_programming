@@ -19,4 +19,5 @@ if __name__ == "__main__":
         order_by(State.id, City.id).all()
     for state in query:
         print("{}: {}".format(state.id, state.name))
-    session.close()
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
