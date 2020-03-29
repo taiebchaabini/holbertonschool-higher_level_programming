@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""prints all City objects from the database hbtn_0e_14_usa """
+""" script that creates the State “California” with the City “San Francisco”
+from the database"""
 if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import (create_engine)
