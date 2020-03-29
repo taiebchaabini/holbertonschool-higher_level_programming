@@ -8,8 +8,10 @@ from relationship_city import City
 
 Base = declarative_base()
 
+
 class State(Base):
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
+    __tablename__ = 'states'
+    id = Column(Integer, unique=True, index=True, nullable=False,
+            primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City")
+    cities = relationship("City", order_by=City.id, back_populates="states")
