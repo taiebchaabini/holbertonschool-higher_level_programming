@@ -4,10 +4,8 @@ the database hbtn_0e_101_usa """
 if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import (create_engine)
-    from sqlalchemy.orm import sessionmaker, relationship, lazyload
+    from sqlalchemy.orm import sessionmaker
     from relationship_state import Base, State, City
-    from sqlalchemy import inspect
-
     user = argv[1]
     pwd = argv[2]
     dbname = argv[3]
