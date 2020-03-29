@@ -9,6 +9,6 @@ from relationship_city import Base, City
 class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, unique=True, index=True, nullable=False,
-            primary_key=True)
+                primary_key=True)
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all,delete", backref="state")

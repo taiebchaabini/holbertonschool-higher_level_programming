@@ -5,6 +5,7 @@ if __name__ == "__main__":
     from sqlalchemy import (create_engine)
     from sqlalchemy.orm import sessionmaker, relationship
     from relationship_state import Base, State, City
+    from sqlalchemy import inspect
 
     user = argv[1]
     pwd = argv[2]
@@ -15,8 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = State(name="California")
-    state.cities.append(City(name="San Fransico"))
-    session.add(state)
-    query = session.query(State).first()
+    parent = State(name="California")
+    parent.cities.append(City(name="San Francisco"))
+    session.add(parent)
     session.commit()
