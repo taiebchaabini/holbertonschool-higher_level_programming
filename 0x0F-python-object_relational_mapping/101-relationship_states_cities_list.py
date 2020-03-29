@@ -5,7 +5,7 @@ if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import (create_engine)
     from sqlalchemy.orm import sessionmaker
-    from relationship_state import Base, State, City
+    from relationship_state import Base, State
     user = argv[1]
     pwd = argv[2]
     dbname = argv[3]
