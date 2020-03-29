@@ -18,4 +18,5 @@ if __name__ == "__main__":
     state = State(name="California")
     state.cities.append(City(name="San Fransico"))
     session.add(state)
+    query = session.query(State).first()
     session.commit()
