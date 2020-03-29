@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-""" that lists all State objects, and corresponding City objects, contained in
-the database hbtn_0e_101_usa """
 if __name__ == "__main__":
     from sys import argv
     from sqlalchemy import (create_engine)
