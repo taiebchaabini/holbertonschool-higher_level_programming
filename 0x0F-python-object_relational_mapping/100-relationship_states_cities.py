@@ -17,5 +17,5 @@ if __name__ == "__main__":
     session = Session()
     state = State(name="California")
     state.cities.append(City(name="San Fransico"))
-    session.add(parent)
+    session.add(state)
     session.commit()
