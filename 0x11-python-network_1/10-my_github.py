@@ -12,4 +12,7 @@ if __name__ == "__main__":
     token = sys.argv[2]
     logins = (username, token)
     r = requests.get(url, auth=logins)
-    print(r.json()['id'])
+    try:
+        print(r.json()['id'])
+    except:
+        print("None")
