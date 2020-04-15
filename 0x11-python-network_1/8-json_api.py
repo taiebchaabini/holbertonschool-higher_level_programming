@@ -15,10 +15,6 @@ if __name__ == "__main__":
     q = {'q': query}
     r = requests.post(url, data=q)
     try:
-        r.json()
-    except:
-        r = None
-    try:
         res = r.json()
         print("[{}] {}".format(res['id'], res['name']))
     except:
