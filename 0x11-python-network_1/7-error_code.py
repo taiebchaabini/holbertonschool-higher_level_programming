@@ -10,7 +10,6 @@ if __name__ == "__main__":
     url = sys.argv[1]
     r = requests.get(url)
     try:
-        status = r.raise_for_status() 
         print(r.text)
     except requests.exceptions.HTTPError:
         print('Error code:', r.status_code)
