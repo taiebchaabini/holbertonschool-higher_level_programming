@@ -2,7 +2,7 @@
 const square = require('./5-square');
 class Square extends square {
   constructor (size) {
-    super(size, size);
+    super(size);
     this.size = size;
   }
 
