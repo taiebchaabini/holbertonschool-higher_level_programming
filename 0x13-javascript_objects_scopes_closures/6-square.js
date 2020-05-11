@@ -6,8 +6,9 @@ class Square extends square {
     this.size = size;
   }
 
-  charPrint (c = 'X') {
+  charPrint (c) {
     const size = this.size;
+    if (c === undefined) { c = 'X'; }
     for (let i = 0; i < size; i++) {
       let sqr = '';
       for (let i = 0; i < size; i++) {
