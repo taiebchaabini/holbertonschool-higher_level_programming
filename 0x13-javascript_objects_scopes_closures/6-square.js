@@ -6,12 +6,12 @@ class Square extends square {
     this.size = size;
   }
 
-  charPrint (getChar = 'X') {
+  charPrint (c = 'X') {
     const size = this.size;
     for (let i = 0; i < size; i++) {
       let sqr = '';
       for (let i = 0; i < size; i++) {
-        sqr += getChar;
+        sqr += c;
       }
       console.log(sqr);
     }
