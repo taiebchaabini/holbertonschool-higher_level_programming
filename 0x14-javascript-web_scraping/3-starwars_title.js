@@ -8,10 +8,12 @@ request('https://swapi-api.hbtn.io/api/films/' + number, function (error, reques
     console.log(error);
     return;
   }
-  const response = JSON.parse(request.body);
-  if (number !== '') {
-    console.log(response.title);
-    return;
+  if (request.statusCode === 200) {
+    const response = JSON.parse(request.body);
+    if (number !== '') {
+      console.log(response.title);
+      return;
+    }
+    for (const i in response.results) { console.log(response.results[i].title); }
   }
-  for (const i in response.results) { console.log(response.results[i].title); }
 });
