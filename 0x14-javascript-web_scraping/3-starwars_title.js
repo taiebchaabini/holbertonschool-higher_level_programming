@@ -5,10 +5,10 @@ let number = '';
 if (argv[2]) { number = argv[2]; }
 request('https://swapi-api.hbtn.io/api/films/' + number, function (error, request) {
   if (error) {
-    console.log(error);
+    console.log();
     return;
   }
-  else if (!error && request.statusCode === 200) {
+  if (request.statusCode === 200) {
     const response = JSON.parse(request.body);
     if (number !== '') {
       console.log(response.title);
