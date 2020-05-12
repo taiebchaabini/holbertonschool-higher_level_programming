@@ -9,14 +9,13 @@ request('https://swapi-api.hbtn.io/api/films/', function (error, request) {
     const response = JSON.parse(request.body);
     let c = 0;
     let characters = '';
-    for (const i in response.results) { 
-            characters = response.results[i].characters;
-            for (let i = 0; i < characters.length; i++)
-        {
-                if (characters[i] === 'https://swapi-api.hbtn.io/api/people/18/'){
-                        c += 1;
-                }
+    for (const i in response.results) {
+      characters = response.results[i].characters;
+      for (let i = 0; i < characters.length; i++) {
+        if (characters[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+          c += 1;
         }
+      }
     }
     console.log(c);
   }
