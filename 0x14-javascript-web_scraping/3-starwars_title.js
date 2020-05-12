@@ -8,7 +8,7 @@ request('https://swapi-api.hbtn.io/api/films/' + number, function (error, reques
     console.log(error);
     return;
   }
-  if (request.statusCode === 200) {
+  else if (!error && request.statusCode === 200) {
     const response = JSON.parse(request.body);
     if (number !== '') {
       console.log(response.title);
